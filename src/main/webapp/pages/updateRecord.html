@@ -1,0 +1,132 @@
+<html>
+<head>
+<link rel="stylesheet" href="../styles/angularMaterial.css" type="text/css" />
+<link rel="stylesheet" href="../styles/custom.css" type="text/css" />
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+<link rel="stylesheet"; href="styles/unpkg_ng_table.css">
+
+</head>
+<body >
+<script src="scripts/angular_min.js"></script>
+<script src="../scripts/validate.js"></script>
+
+<script src="scripts/ng_table_min.js"></script>
+<script src="scripts/jquery_min.js"></script>
+  <script src="scripts/bootstrap_min.js"></script>
+<script src="scripts/angular_animate_min.js"></script>
+<script src="scripts/angular_aria_min.js"></script>
+<script src="scripts/angular_message_min.js"></script>
+<!-- Angular Material Library -->
+<script src="scripts/angular_material_min.js"></script>
+<script src="scripts/angular_route.js"></script>
+<script src="scripts/coludfare_angular.js"></script>
+	<div ng-app="myApp" ng-controller="myCtrl">
+		<form name="updateRecordForm" novalidate>
+			<div layout="row" layout-align="space-around center"
+				style="height: 80%;">
+				<div layout="column">
+					<md-input-container>
+					<label>Enter your email</label>
+					<input type="email" required name="emailidd" ng-model="update.emailId"/></md-input-container>
+					<h3>Select the fields that you want to update</h3>
+					<md-checkbox ng-model="cb.firstname">First Name</md-checkbox>
+					<md-checkbox ng-model="cb.middlename">Middle Name</md-checkbox>
+					<md-checkbox ng-model="cb.lastname">Last Name</md-checkbox>
+					<md-checkbox ng-model="cb.email">Email Id</md-checkbox>
+					<md-checkbox ng-model="cb.username">User Name</md-checkbox>
+					<md-checkbox ng-model="cb.phonenumber">Phone Number</md-checkbox>
+					<md-checkbox ng-model="cb.password">Password</md-checkbox>
+					<md-checkbox ng-model="cb.gender">Gender</md-checkbox>
+					<md-checkbox ng-model="cb.permanentaddress">Permanent Address</md-checkbox>
+					<md-checkbox ng-model="cb.zipcode">Zip Code</md-checkbox>
+				</div>
+					<div layout="column">
+						<md-input-container ng-show="cb.firstname"> <label>FirstName</label>
+						<input type="text" name="firstName" ng-model="update.firstName"
+							class="textbox" id="fn"  />
+						<div ng-messages="signupForm.firstName.$error">
+							<div ng-message="">Wrong input or empty.</div>
+						</div>
+						</md-input-container>
+						<md-input-container ng-show="cb.middlename"> <label>MiddleName</label>
+						<input name="middleName" ng-model="update.middleName"
+							class="textbox" id="mn" />
+						<div ng-messages="signupForm.middleName.$error">
+							<div ng-message="" ng-hide="update.middleName">Wrong
+								input or empty.</div>
+						</div>
+						</md-input-container>
+
+						<md-input-container ng-show="cb.lastname"> <label>LastName</label>
+						<input name="lastName" ng-model="update.lastName"
+							class="textbox" id="ln" />
+						<div ng-messages="signupForm.lastName.$error">
+							<div ng-message="" ng-hide="update.lastName">Wrong
+								input or empty.</div>
+						</div>
+						</md-input-container>
+						<label ng-show="cb.email">
+						<span>Email cannot be updated</span>
+						</label>
+
+						<md-input-container ng-show="cb.username"> <label>UserName</label>
+						<input name="userName" ng-model="update.userName"
+							class="textbox" id="un"  />
+						<div ng-messages="signupForm.userName.$error">
+							<div ng-message="" ng-hide="update.userName">Wrong
+								input or empty.</div>
+						</div>
+						</md-input-container>
+						<md-button class="md-raised md-primary md-accent" ng-disabled="updateRecordForm.$invalid" ng-click="updateRecord()">Update</md-button>
+					</div>
+					<div layout="column">
+
+						<md-input-container ng-show="cb.phonenumber"> <label>PhoneNumber</label>
+						<input name="phoneNumber" ng-model="update.phoneNumber"
+							class="textbox" id="add"  />
+						<div ng-messages="signupForm.phoneNumber.$error">
+							<div ng-message="" ng-hide="update.phoneNumber">Wrong
+								input or empty.</div>
+						</div>
+						</md-input-container>
+
+						<md-input-container ng-show="cb.password"> <label>Password</label>
+						<input type="password" name="passWord"
+							ng-model="update.passWord" class="textbox" id="pd"  />
+						<div ng-messages="signupForm.passWord.$error">
+							<div ng-message="" ng-hide="update.passWord">Wrong
+								input or empty.</div>
+						</div>
+						</md-input-container>
+						<md-input-container ng-show="cb.gender"> <label>Gender</label> <md-select
+							name="gender" ng-model="update.gender"> <md-option
+							value="male">Male</md-option> <md-option value="female">Female</md-option></md-select>
+						<div ng-messages="signupForm.gender.$error">
+							<div ng-message="" ng-hide="update.gender">Wrong
+								input or empty.</div>
+						</div>
+						</md-input-container>
+
+						<md-input-container ng-show="cb.permanentaddress"> <label>PermanentAddress</label>
+						<input name="permanentAddress"
+							ng-model="update.permanentAddress" class="textbox" id="add" />
+						</md-input-container>
+
+						<md-input-container ng-show="cb.zipcode"> <label>ZipCode</label> <input
+							name="zipCode" ng-model="update.zipCode" class="textbox"
+							id="zip" />
+						<div ng-messages="signupForm.ZipCode.$error">
+							<div ng-message="" ng-hide="update.zipCode">Wrong
+								input or empty.</div>
+						</div>
+						</md-input-container>
+
+						
+						<md-button ng-href="#login" class="md-accent md-raised md-primary">Back
+						To login</md-button>
+					</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

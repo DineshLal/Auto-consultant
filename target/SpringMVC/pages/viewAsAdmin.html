@@ -1,0 +1,60 @@
+<html>
+<head>
+<link rel="stylesheet" href="../styles/angularMaterial.css" type="text/css" />
+<link rel="stylesheet" href="../styles/custom.css" type="text/css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body >
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+<script src="../scripts/validate.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+<!-- Angular Material Library -->
+<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<div ng-app="myApp" ng-controller="myCtrl">
+<form name="viewasadmindataForm">
+		<div layout="column" ng-show="!dinesh" layout-align="center center" layout-fill>
+			<md-input-container> <label>Enter
+				admin mail id</label> <input type="email" name="adminemailId"
+				ng-model="viewdataAsAdmin.emailId" class="textbox" id="adminmail"
+				required /> </md-input-container>
+
+			<md-input-container> <label>Enter
+				admin password</label> <input type="password" name="adminpassword"
+				ng-model="viewdataAsAdmin.passWord" class="textbox"
+				id="adminpswd" required /> </md-input-container>
+
+			<md-button class="md-accent md-raised md-primary"
+				ng-disabled="viewasadmindataForm.adminemailId.$invalid;viewasadmindataForm.adminpassword.$invalid"
+				ng-click="viewAsAdmin()">view As Admin</md-button>
+		</div>
+		<div ng-show="dinesh" layout-fill layout="column" layout-align="center center">
+		<!-- <md-checkbox class="floating" ng-model="selectAllCB" ng-click="selectAll()"><p ng-show="selecting">Select All</p><p ng-show="!selecting">Deselect All</p></md-checkbox> -->
+			<table class="table table-hover">
+		<th>selection</th><th>firstName</th><th>middleName</th><th>lastName</th><th>emailId</th><th>USerName</th><th>passWord</th><th>Gender</th><th>Permanent address</th><th>Zip code</th><th>IsActive</th><th>PhoneNumber</th>
+		<tr ng-repeat="x in lal">
+		<td>
+		<md-checkbox ng-checked="exists(x.emailId, selected)" ng-click="toggle(x.emailId, selected)"></td>
+
+		<td>{{x.firstName}}</td>
+		<td>{{x.middleName}}</td>
+		<td>{{x.lastName}}</td>
+		<td>{{x.emailId}}</td>
+		<td>{{x.userName}}</td>
+		<td>{{x.passWord}}</td>
+		<td>{{x.gender}}</td>
+		<td>{{x.permanentAddress}}</td>
+		<td>{{x.zipCode}}</td>
+		<td>{{x.isActive}}</td>
+		<td>{{x.phoneNumber}}</td>
+		</tr></tr>
+		</table>
+		<md-button class="md-raised md-primary md-accent" ng-click="deleteAsAdmin()">Delete</md-button></div>		
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<html>
+<head>
+<link rel="stylesheet" href="../styles/angularMaterial.css" type="text/css" />
+</head>
+<body >
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+<script src="../scripts/validate.js"></script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+<!-- Angular Material Library -->
+<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<div ng-app="myApp" ng-controller="myCtrl" style="height: 100%;" >
+
+	<form name="rentVehicleForm" novalidate>
+	<div layout="row" layout-align="space-around center" layout-fill>
+	<div ></div>
+	<div layout="column">
+			<md-input-container> <label>Enter registered User Name</label>
+						<input type="text" name="userName" ng-model="rentVehicle.userName"
+							class="textbox" id="un" required />
+						<div ng-messages="rentVehicleForm.userName.$error">
+							<div ng-message="required" ng-hide="rentVehicle.userName">Wrong
+								input or empty.</div>
+						</div>
+						</md-input-container>
+			<md-input-container> <label>Licence DL no.</label>
+						<input type="text" name="dlno" ng-model="rentVehicle.licenceDLno"
+							class="textbox" id="dlno" required />
+						<div ng-messages="rentVehicleForm.dlno.$error" >
+							<div ng-message="required" ng-hide="rentVehicle.licenceDLno" >Wrong
+								input or empty.</div>
+						</div>
+						</md-input-container>
+			<md-input-container> <label>Licence Expiry Date</label>
+						<input type="text" name="expirydate" ng-model="rentVehicle.licenceExpiryDate"
+							class="textbox" id="expiry" required />
+						<div ng-messages="rentVehicleForm.expirydate.$error">
+							<div ng-message="required" ng-hide="rentVehicle.licenceExpiryDate">Wrong
+								input or empty.</div>
+						</div>
+						</md-input-container>
+			<md-input-container> <label>Licence Type</label> <md-select name="typeLicence" ng-model="rentVehicle.licenceType" required>
+			<md-option value="light">Light</md-option>
+			<md-option value="heavy">Heavy</md-option>
+			<md-option value="badge">Badge</md-option>
+			</md-select><div ng-messages="rentVehicleForm.typeLicence.$error">
+							<div ng-message="required" ng-hide="rentVehicle.licenceType">Wrong
+								input or empty.</div>
+						</div>
+			</md-input-container></div>
+			<div layout="column">
+			<md-input-container> <label>Duration</label>
+						<input type="text" name="timing" ng-model="rentVehicle.duration"
+							class="textbox" id="model" required />
+						<div ng-messages="rentVehicleForm.timing.$error">
+							<div ng-message="required" ng-hide="rentVehicle.duration">Wrong
+								input or empty.</div>
+						</div>
+						</md-input-container>
+			<md-input-container> <label>Vehicle Model</label>
+						<input type="text" name="vehiclemodel" ng-model="rentVehicle.vehicleModel"
+							class="textbox" id="model" required />
+						<div ng-messages="rentVehicleForm.vehiclemodel.$error">
+							<div ng-message="required" ng-hide="rentVehicle.vehicleModel">Wrong
+								input or empty.</div>
+						</div>
+						</md-input-container>
+			<md-input-container> <label>Payable Method</label> 
+			<md-select ng-model="rentVehicle.payableMethod" name="payable" required>
+			<md-option value="day">Day</md-option>
+			<md-option value="week">Week</md-option>
+			<md-option value="month">Month</md-option>
+			</md-select><div ng-messages="rentVehicleForm.payable.$error">
+							<div ng-message="required" ng-hide="rentVehicle.payableMethod">Wrong
+								input or empty.</div>
+						</div>
+			</md-input-container>
+			<md-button class="md-accent md-raised md-primary" ng-click="rentVehicleBtn()" ng-disabled="rentVehicleForm.$invalid">Rent Here</md-button>
+			</div>
+			<div></div>
+			</div>
+		</form>
+
+</div>
+</body>
+</html>

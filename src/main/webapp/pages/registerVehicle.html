@@ -1,0 +1,94 @@
+<html>
+<head>
+<link rel="stylesheet" href="styles/angularMaterial.css" type="text/css" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<link rel="stylesheet" href="styles/custom.css" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script> -->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+<!-- Angular Material Library -->
+<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<script src="scripts/validate.js"></script>
+<div ng-app="myApp" ng-controller="myCtrl" layout-fill flex=100>
+<form name="registerVehicleForm" enctype="multipart/form-data">
+<div layout="row" layout-align="space-around center" layout-fill flex>
+			
+<div flex-xs=25 flex-xl=15 flex-lg="20">
+<md-input-container>
+<label>Vehicle type</label>
+<input type="Text" name="typeofvehicle" required ng-model="register.typeOfVehicle"/>
+<div ng-messages="registerVehicleForm.typeofvehicle.$error">
+<div ng-message="required" ng-hide="register.typeOfVehicle">Wrong input or empty</div>
+</div>
+</md-input-container>		
+<md-input-container>
+<label>Vehicle Model</label>
+<input name="vehiclemodel" ng-model="register.vehicleModel" type="text" required />
+<div ng-messages="registerVehicleForm.vehicleModel.$error">
+<div ng-message="required" ng-hide="register.vehicleModel">Wrong input or empty</div>
+</div>
+</md-input-container>
+<md-input-container>
+<label>Registration number</label>
+<input name="regno" ng-model="register.registrationNo" type="text" required />
+<div ng-messages="registerVehicleForm.regno.$error">
+<div ng-message="required" ng-hide="register.registrationNo">Wrong input or empty</div>
+</div>
+</md-input-container>
+<md-input-container>
+<label>Vehicle color</label>
+<input name="vehiclecolor" ng-model="register.color" type="text" required />
+<div ng-messages="registerVehicleForm.vehiclecolor.$error">
+<div ng-message="required" ng-hide="register.color">Wrong input or empty</div>
+</div>
+</md-input-container>
+<md-input-container>
+<label>Owner Name</label>
+<input name="ownername" ng-model="register.ownerName" type="text" required />
+<div ng-messages="registerVehicleForm.ownername.$error">
+<div ng-message="required" ng-hide="register.ownerName">Wrong input or empty</div>
+</div>
+</md-input-container>
+</div>
+<div flex-xs=25 flex-xl=10 flex-lg="20">
+<md-input-container>
+<label>No of hand</label>
+<input name="noofowner" ng-model="register.noOfOwner" type="text" required />
+<div ng-messages="registerVehicleForm.noofowner.$error">
+<div ng-message="required" ng-hide="register.noofowner">Wrong input or empty</div>
+</div>
+</md-input-container>
+<md-input-container>
+<label>Rate to sale</label>
+<input name="sellingrate" ng-model="register.rateToSale" type="text" required />
+<div ng-messages="registerVehicleForm.sellingrate.$error">
+<div ng-message="required" ng-hide="register.rateToSale">Wrong input or empty</div>
+</div>
+</md-input-container>
+<md-input-container>
+<label>Phone number to refer</label>
+<input name="phoneno" ng-model="register.phoneNumber" type="text" required />
+<div ng-messages="registerVehicleForm.phoneno.$error">
+<div ng-message="required" ng-hide="register.phoneNumber">Wrong input or empty</div>
+</div>
+</md-input-container>
+
+<md-button class="md-button md-primary md-raised" ng-disabled="registerVehicleForm.$invalid" ng-click="registerVehicleBtn()">Click to Register</md-button>
+<form method="POST" action="/registering/imageUpload" enctype="multipart/form-data">
+File to upload<input type="file" class="registerButton"  ng-disabled="registerVehicleForm.$invalid" name="file" ng-model="register.vehicleImage" value="choose vehicle"/><br>
+<input type="text" name="name" /><br><br>
+<input type="submit" value="upload" /> 
+</form>
+</div>
+</div>
+<div flex=20></div>
+</form>
+</div>
+<!-- ownerName,noOfOwner,rateToSale,typeOfVehicle,color,registrationNo -->
+</body>
+</html>

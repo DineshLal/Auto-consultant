@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<link rel="stylesheet" href="../styles/angularMaterial.css" type="text/css" />
+</head>
+<body>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+<script src="../scripts/validate.js"></script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+<!-- Angular Material Library -->
+<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+	<div ng-app="myApp" ng-controller="myCtrl">
+		
+		<form name="signupForm" novalidate>
+				<div layout="row" layout-align="space-around center" layout-xs="column" layout-fill flex>
+					<div layout="column" >
+						<md-input-container> <label>FirstName</label>
+						<input type="text" name="firstName" ng-model="signupApp.firstName"
+							class="textbox" id="fn" required />
+						<div ng-messages="signupForm.firstName.$error">
+							<div ng-message="required" >Wrong
+								input or empty.</div>
+						</div>
+						</md-input-container>
+						<md-input-container> <label>MiddleName</label>
+						<input name="middleName" ng-model="signupApp.middleName"
+							class="textbox" id="mn" />
+						<div ng-messages="signupForm.middleName.$error">
+							<div ng-message="required" ng-hide="signupApp.middleName">Wrong
+								input or empty.</div>
+						</div>
+						</md-input-container>
+
+						<md-input-container> <label>LastName</label>
+						<input name="lastName" ng-model="signupApp.lastName"
+							class="textbox" id="ln" />
+						<div ng-messages="signupForm.lastName.$error">
+							<div ng-message="required" ng-hide="signupApp.lastName">Wrong
+								input or empty.</div>
+						</div>
+						</md-input-container>
+						<md-input-container> <label>EmailId</label> <input
+							type="email" name="emailId" ng-model="signupApp.emailId"
+							class="textbox" id="mail" required />
+						<div ng-messages="signupForm.emailId.$error">
+							<div ng-message="required" ng-hide="signupApp.emailId">Wrong
+								input or empty.</div>
+						</div><span ng-if="signupapp.emailId=='exists'">choose vera email id</span>
+						<div ng-messages="signupForm.emailId.$valid">
+							<!-- <div ng-message="valid"></div> -->
+						</div>
+						</md-input-container>
+
+						<md-input-container> <label>UserName</label>
+						<input name="userName" ng-model="signupApp.userName"
+							class="textbox" id="un" required />
+						<div ng-messages="signupForm.userName.$error">
+							<div ng-message="required" ng-hide="signupApp.userName">Wrong
+								input or empty.</div>
+						</div>
+						</md-input-container>
+						<md-button ng-click="redirectMainPage()"
+							ng-disabled="signupForm.$invalid"
+							class="md-accent md-raised md-primary">Submit Data</md-button>
+					</div>
+					<div layout="column">
+					
+						<md-input-container> <label>PhoneNumber</label>
+						<input name="phoneNumber" ng-model="signupApp.phoneNumber"
+							class="textbox" id="add" required />
+						<div ng-messages="signupForm.phoneNumber.$error">
+							<div ng-message="required" ng-hide="signupApp.phoneNumber">Wrong
+								input or empty.</div>
+						</div>
+						</md-input-container>
+
+						<md-input-container> <label>Password</label>
+						<input type="password" name="passWord"
+							ng-model="signupApp.passWord" class="textbox" id="pd" required />
+						<div ng-messages="signupForm.passWord.$error">
+							<div ng-message="required" ng-hide="signupApp.passWord">Wrong
+								input or empty.</div>
+						</div>
+						</md-input-container>
+						<md-input-container> <label>Gender</label> <md-select
+							name="gender" ng-model="signupApp.gender"> <md-option
+							value="male">Male</md-option> <md-option value="female">Female</md-option></md-select>
+						<div ng-messages="signupForm.gender.$error">
+							<div ng-message="required" ng-hide="signupApp.gender">Wrong
+								input or empty.</div>
+						</div>
+						</md-input-container>
+
+						<md-input-container > <label>PermanentAddress</label>
+						<input name="permanentAddress"
+							ng-model="signupApp.permanentAddress" class="textbox" id="add" />
+						</md-input-container>
+
+						<md-input-container> <label>ZipCode</label> <input
+							name="zipCode" ng-model="signupApp.zipCode" class="textbox"
+							id="zip" />
+						<div ng-messages="signupForm.ZipCode.$error">
+							<div ng-message="required" ng-hide="signupApp.zipCode">Wrong
+								input or empty.</div>
+						</div>
+						</md-input-container>
+
+<input type=file />
+						<md-button ng-href="#login"
+							class="md-accent md-raised md-primary">Back To login</md-button>
+				</div></div>
+			</form>
+		
+	</div>
+	
+</body>
+</html>

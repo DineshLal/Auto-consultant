@@ -1,0 +1,65 @@
+<html>
+<head>
+<link rel="stylesheet" href=".../styles/angularMaterial.css" type="text/css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body >
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+<script src="../scripts/validate.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+<!-- Angular Material Library -->
+<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<div ng-app="myApp" ng-controller="myCtrl">
+<div style="height: 100%;">
+<form name="viewdataForm">
+				<div ng-show="!viewdatadiv" layout="row" layout-align="space-around center" layout-fill>
+					<div layout="column" layout-align="center center">
+						<md-input-container> <label>Enter
+							your mail id</label> <input type="email" name="emailId"
+							ng-model="viewdata.emailId" class="textbox" id="mail" required />
+						<div
+							ng-messages="viewdataForm.emailId.$invalid;viewdataForm.emailId.$untouched">
+							<div ng-message="required">This is required.</div>
+						</div>
+						</md-input-container>
+
+						<md-input-container> <label>Enter
+							user password</label> <input type="password" name="password"
+							ng-model="viewdata.passWord" class="textbox" id="pswd" required />
+						</md-input-container>
+
+						<md-button class="md-accent md-raised md-primary"
+							ng-disabled="viewdataForm.emailId.$invalid;viewdataForm.password.$invalid"
+							ng-click="viewDataBtn()">view As User</md-button>
+					</div>
+				</div>
+			</form>
+			
+			<div ng-show="viewdatadiv" layout-fill layout="column" layout-align="center center">
+			<table class="table table-hover">
+				<th>firstName</th><th>middleName</th><th>lastName</th><th>emailId</th><th>USerName</th><th>passWord</th><th>Gender</th><th>Permanent address</th><th>Zip code</th><th>IsActive</th><th>PhoneNumber</th>
+					<tr>
+					<br><td>{{viewData.firstName}}</td>
+					<td>{{viewData.middleName}}</td>
+					<td>{{viewData.lastName}}</td>
+					<td>{{viewData.emailId}}</td>
+					<td>{{viewData.userName}}</td>
+					<td>{{viewData.passWord}}</td>
+					<td>{{viewData.gender}}</td>
+					<td>{{viewData.permanentAddress}}</td>
+					<td>{{viewData.zipCode}}</td>
+					<td>{{viewData.isActive}}</td>
+					<td>{{viewData.phoneNumber}}</td>
+					</tr>
+			</div>
+			</table>
+			
+			</div>
+</div>
+</body>
+</html>

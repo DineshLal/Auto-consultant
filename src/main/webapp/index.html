@@ -1,0 +1,50 @@
+<html>
+<head>
+<link rel="stylesheet" href="styles/angularMaterial.css" type="text/css" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<link rel="stylesheet" href="styles/custom.css" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script> -->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+<!-- Angular Material Library -->
+<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<script src="scripts/validate.js"></script>
+
+<div ng-app="myApp" ng-controller="myCtrl"  layout-fill>
+<div class="permanent_div" layout="row"  layout-align="center center" >
+
+<md-sidenav class="md-sidenav-left md-sideCustom" md-component-id="left" md-disable-backdrop="" md-whiteframe="2">
+<md-toolbar class="md-accent md-primary md-raised">
+        <h1 class="md-toolbar-tools">Comment here</h1>
+      </md-toolbar><br>
+     <md-input-container>
+      <label>Comment here</label> <center>
+      <input type="text" flex=100 ng-model="adding.feedBack" required/>
+      </md-input-container><br><br>
+       <div star-rating rating="ratting" click="click3(param)" mouse-hover="mouseHover3(param)" mouse-leave="mouseLeave3(param)"></div><br>
+            <div><span style="color:rgb(255,64,129);" ng-model="adding.rating">Star Rating:{{adding.rating}}</span>
+            </div>
+<md-button ng-click="toggleLeft();addComment(adding)" class="md-accent md-primary md-raised">Add comment & <br>Close this</md-button>
+<md-button ng-click="deletePreviousComment()" class="md-accent md-primary md-raised">Add new comment</md-button>
+
+</center>
+{{resultingFeedBack}}
+</md-sidenav>
+<div><md-button  layout-align="center center" layout="row" class="md-button custom-button md-accent md-raised md-primary" ng-href="#">About</md-button></div>
+<div><md-button  layout-align="center center" layout="row" class="md-button custom-button md-accent md-raised md-primary" ng-href="#signup">sign-up</md-button></div>
+<div><md-button class="md-accent md-raised custom-button md-primary"  layout-align="center center" layout="row" ng-href="#login" >login</md-button></div>
+<div><md-button class="md-accent md-primary custom-button md-raised" layout-align="center center" layout="row" ng-href="#viewData">check</md-button></div>
+<div><md-button class="md-accent md-primary custom-button md-raised" layout-align="center center" layout="row" ng-href="#viewasadmin">View all</md-button></div>
+<div><md-button ng-click="toggleLeft()" layout="row" layout-align="center center" ng-if="sideNavView" class="custom-button md-raised md-accent md-primary">Add Comment</md-button></div>
+</div>		
+
+
+<div class="ng-view-division" ng-view></div>
+</div>
+</body>
+</html>

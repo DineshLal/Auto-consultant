@@ -1,0 +1,46 @@
+.permanent_div
+{
+	background-color:#ccced1;
+}
+.registerButton
+{
+	background-color:#ccced1;
+	border-radius:5px;
+}
+.indexText
+{
+	font-family: "verdana", Georgia, Serif;
+}
+.floating
+{
+	float:left;
+}
+.floating1
+{
+	float:right;
+}
+.md-sideCustom
+{
+	width:220px;
+}
+.myColor
+{
+	color:#ed3893;
+}
+.myColor2
+{
+	background-color:#ed3893;
+}
+.cursorPoint
+{
+	cursor:pointer;
+}
+.md-required
+{
+	border-color:#ccced1;
+	color:#ccced1;
+}
+.label_color
+{
+	color:#ccced1;
+}
